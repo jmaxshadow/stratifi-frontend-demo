@@ -19,12 +19,17 @@ Ensure you have Node.js installed on your system.
 
 1. Clone the repository:
 ```
-git clone https://github.com/jmaxshadow2/stratifi.git
+git clone git clone https://github.com/jmaxshadow/stratifi-frontend-demo
 ```
 
 2. Navigate into the project directory:
 ```
-cd stratifi
+cd stratifi-frontend-demo
+```
+
+3. Install the project dependencies:
+```
+npm install
 ```
 
 
