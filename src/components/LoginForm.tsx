@@ -10,7 +10,6 @@ const LoginForm: React.FC = () => {
     const navigate = useNavigate();
   
     const handleSubmit = (e: React.FormEvent) => {
-      console.log('handleSubmit Clicked');
       setLoginButtonTest('Logging In...');
       e.preventDefault();
       auth.login(email, password);

@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, redirect } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import { fetchClient, fetchClientAccounts } from '../services/ApiService'; // Adjust import paths as needed
+import AccountDetail from './AccountDetail';
 
 const ClientProfile: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -51,9 +52,7 @@ const ClientProfile: React.FC = () => {
         accounts.length > 0 ? (
           <ul>
             {accounts.map((account) => (
-              <li key={account.id}>
-                <strong>{account.name}</strong> (#{account.number}) - Value: ${account.value.toFixed(2)}
-              </li>
+              <AccountDetail key={account.id} account={account} />
             ))}
           </ul>
         ) : (

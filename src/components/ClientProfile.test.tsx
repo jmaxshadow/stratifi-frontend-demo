@@ -2,11 +2,10 @@ import { render, screen, waitFor } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import ClientProfile from './ClientProfile';
-import { wait } from '@testing-library/user-event/dist/types/utils';
 
 // Mock useParams
 jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'), // Use actual for all non-hook parts
+  ...jest.requireActual('react-router-dom'),
   useParams: () => ({
     id: '1',
   }),

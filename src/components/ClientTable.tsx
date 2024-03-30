@@ -1,8 +1,8 @@
 import React from 'react';
 import { useQuery } from 'react-query';
-import { fetchClients } from '../services/ApiService'; // Adjust the path as needed
-import { Client } from '../types/client'; // Adjust the path as needed
-import { Link } from 'react-router-dom';
+import { fetchClients } from '../services/ApiService';
+import { Client } from '../types/client';
+import ClientRow from './ClientRow';
 
 const ClientTable: React.FC = () => {
     const { data: clients, isLoading } = useQuery<Client[]>('clients', fetchClients);
@@ -22,15 +22,7 @@ const ClientTable: React.FC = () => {
         </thead>
         <tbody>
           {clients.map((client) => (
-            <tr key={client.id}>
-              <td>{client.name}</td>
-              <td>{client.email}</td>
-              <td>{client.phoneNumber}</td>
-              <td>{client.address}</td>
-              <td>
-                <Link to={`/clients/${client.id}`}>View</Link>
-              </td>
-            </tr>
+            <ClientRow key={client.id} client={client} />
           ))}
         </tbody>
       </table>
